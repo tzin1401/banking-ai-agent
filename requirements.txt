@@ -1,0 +1,36 @@
+# =====================================================
+# Banking AI-Agent — Lab 3
+# =====================================================
+# Two install profiles are supported:
+#   1) Local dev / mock mode  → only need the "Core" section
+#   2) Full mode (Colab + GPU) → install everything below
+#
+# Recommended order on Colab:
+#   pip install --upgrade pip
+#   pip install -r requirements.txt
+#   # then install Unsloth separately per Lab 2 instructions
+# -----------------------------------------------------
+
+# --- Core (FastAPI + orchestration) ---
+fastapi>=0.110,<0.120
+uvicorn[standard]>=0.27,<0.40
+pydantic>=2.6,<3.0
+pydantic-settings>=2.2,<3.0
+pyyaml>=6.0,<7.0
+requests>=2.31,<3.0
+httpx>=0.27,<1.0
+
+# --- Intent model (Lab 2 stack — needed on Colab) ---
+# Unsloth is installed via its own command on Colab;
+# leave the line below commented locally if you don't have CUDA.
+# unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+transformers>=4.40,<5.0
+peft>=0.10,<1.0
+accelerate>=0.27,<2.0
+bitsandbytes>=0.43,<1.0
+torch>=2.1
+xformers
+trl
+
+# --- Utilities ---
+python-dotenv>=1.0,<2.0

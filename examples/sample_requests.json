@@ -1,0 +1,72 @@
+[
+  {
+    "id": "card_arrival_low",
+    "message": "Hi, I ordered a new card 4 days ago but it still hasn't arrived. Can you check?",
+    "expected_intent": "card_arrival",
+    "expected_priority": "low",
+    "expected_action": "reply"
+  },
+  {
+    "id": "lost_card_high",
+    "message": "I lost my card on the train today and I'm really worried someone might use it. Please help.",
+    "expected_intent": "lost_or_stolen_card",
+    "expected_priority": "high",
+    "expected_action": "escalate"
+  },
+  {
+    "id": "transfer_not_received_medium",
+    "message": "I sent a transfer to my friend yesterday but he says he still hasn't received the money.",
+    "expected_intent": "transfer_not_received_by_recipient",
+    "expected_priority": "medium",
+    "expected_action": "ask_more"
+  },
+  {
+    "id": "failed_transfer_medium",
+    "message": "Why did my transfer to John fail this morning?",
+    "expected_intent": "failed_transfer",
+    "expected_priority": "medium",
+    "expected_action": "ask_more"
+  },
+  {
+    "id": "extra_charge_medium",
+    "message": "Why was I charged an extra fee on my last card payment?",
+    "expected_intent": "card_payment_fee_charged",
+    "expected_priority": "medium",
+    "expected_action": "reply"
+  },
+  {
+    "id": "refund_missing_medium",
+    "message": "The merchant told me they refunded me last week but I still don't see the money in my account.",
+    "expected_intent": "Refund_not_showing_up",
+    "expected_priority": "medium",
+    "expected_action": "ask_more"
+  },
+  {
+    "id": "unauthorised_high",
+    "message": "Someone just made an unauthorised transaction on my card for $200 — I didn't do this!",
+    "expected_intent": "card_payment_not_recognised",
+    "expected_priority": "high",
+    "expected_action": "escalate"
+  },
+  {
+    "id": "pin_blocked_medium",
+    "message": "I entered my PIN wrong three times and now it's blocked. How do I fix it?",
+    "expected_intent": "pin_blocked",
+    "expected_priority": "medium",
+    "expected_action": "reply"
+  },
+  {
+    "id": "apple_pay_low",
+    "message": "Does my card work with Apple Pay?",
+    "expected_intent": "apple_pay_or_google_pay",
+    "expected_priority": "low",
+    "expected_action": "reply"
+  },
+  {
+    "id": "verify_identity_medium",
+    "message": "How do I verify my identity in the app? I'd like to start using my account.",
+    "expected_intent": "verify_my_identity",
+    "expected_priority": "medium",
+    "expected_action": "reply"
+  }
+]

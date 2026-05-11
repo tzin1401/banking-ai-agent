@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Model artifacts (downloaded at runtime, kept off Git)
+outputs/
+sample_data/
+artifacts/
+intent_artifacts/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+
+# Zips (must be uploaded to Drive, not Git)
+*.zip
+
+# Logs
+*.log
+server.log
+nohup.out
+
+# OS / IDE
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Secrets / env files
+.env
+.env.local
+.env.*.local
+
+# Notebook checkpoints
+.ipynb_checkpoints/
