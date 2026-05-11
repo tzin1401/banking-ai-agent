@@ -56,6 +56,8 @@ def build_llm_client(settings: Settings) -> BaseLLMClient:
         base_url=settings.ollama_url,
         model=settings.ollama_model,
         timeout=settings.ollama_timeout,
+        default_max_tokens=settings.llm_max_tokens,
+        reasoning_effort=settings.llm_reasoning_effort,
     )
 
 

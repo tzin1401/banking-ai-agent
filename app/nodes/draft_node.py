@@ -88,8 +88,10 @@ def _parse_json(raw: str) -> dict[str, Any] | None:
 class DraftNode:
     """Generate a draft reply using the configured LLM client."""
 
-    def __init__(self, llm: BaseLLMClient, max_tokens: int = 512) -> None:
+    def __init__(self, llm: BaseLLMClient, max_tokens: int | None = None) -> None:
         self.llm = llm
+        # `None` means "let the client pick its default" — for OllamaClient
+        # that comes from settings.llm_max_tokens.
         self.max_tokens = max_tokens
 
     # ------------------------------------------------------------------

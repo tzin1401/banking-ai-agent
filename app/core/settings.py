@@ -38,9 +38,19 @@ class Settings(BaseSettings):
         description="Model tag served by Ollama for drafting.",
     )
     ollama_timeout: float = Field(
-        default=120.0,
-        description="Per-request timeout in seconds.",
+        default=600.0,
+        description="Per-request timeout in seconds. gpt-oss generates "
+        "chain-of-thought tokens before its final answer, so large prompts "
+        "can take several minutes on a T4.",
     )
+
+    # gpt-oss specific: must be wide enough to fit both `thinking` and the
+    # final `content`. Empirically 256 tokens of content + plenty of headroom
+    # for reasoning works well.
+    llm_max_tokens: int = Field(default=2048, ge=64)
+    # 'low' | 'medium' | 'high' — controls how verbose gpt-oss's thinking is.
+    # 'low' is the right default for production-style use.
+    llm_reasoning_effort: str = Field(default="low")
 
     # --- Intent detection (Lab 2 fine-tuned model) ---
     intent_mode: Literal["unsloth", "mock"] = Field(
