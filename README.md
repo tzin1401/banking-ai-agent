@@ -40,9 +40,13 @@ customer_msg
 | Intent Detection | Fine-tuned **Llama-3.2-3B + LoRA** (from [Lab 2](https://github.com/tzin1401/banking-intent-unsloth)) | Test accuracy **93.70%** on BANKING77 |
 | Priority / Risk | Rule-based (keywords + intent) | low / medium / high |
 | Policy Retrieval | Static dict lookup | 77 BANKING77 intents → policy snippets |
-| Response Drafting | **`gpt-oss:20b`** via Ollama (HTTP) | Falls back to `gpt-oss:7b` if VRAM is tight |
+| Response Drafting | **`qwen2.5:7b`** via Ollama (HTTP) | T4-friendly default; switch `OLLAMA_MODEL=gpt-oss:20b` on A100/L4 |
 | Validation | Rule-based (length, placeholders, confidence) | |
 | Routing | Rule-based combining all prior signals | |
+
+### Why qwen2.5:7b instead of gpt-oss:20b?
+
+The lab handout *encourages* `gpt-oss:20b`, but that model alone needs ≥16 GB VRAM. Combined with the Lab 2 Unsloth-3B intent classifier (~2.5 GB) it OOMs a Colab Free T4 (15.36 GB usable). The orchestrator talks to **any Ollama chat model** via HTTP, so we default to `qwen2.5:7b` (~4.7 GB) for reliability and document the upgrade path for users with bigger GPUs.
 
 ---
 

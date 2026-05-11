@@ -34,8 +34,10 @@ class Settings(BaseSettings):
         description="Base URL of the Ollama HTTP server.",
     )
     ollama_model: str = Field(
-        default="gpt-oss:20b",
-        description="Model tag served by Ollama for drafting.",
+        default="qwen2.5:7b",
+        description="Model tag served by Ollama for drafting. "
+        "Default fits Colab T4 alongside the Unsloth intent model. "
+        "Switch to 'gpt-oss:20b' on A100/L4 (>=24 GB VRAM).",
     )
     ollama_timeout: float = Field(
         default=600.0,
