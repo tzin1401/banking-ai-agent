@@ -114,6 +114,7 @@ class BankingAgent:
             draft=draft, intent=intent, policy=policy
         )
         decision = self.router_node.run(
+            message=message,
             intent=intent,
             priority=priority,
             draft=draft,

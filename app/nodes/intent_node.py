@@ -40,7 +40,7 @@ _MOCK_KEYWORD_RULES: list[tuple[str, list[str]]] = [
         "didn't receive", "didn't get the money", "didn't get the transfer",
         "transfer not received", "recipient hasn", "recipient didn",
     ]),
-    ("failed_transfer", ["transfer fail", "transfer failed", "transfer error", "transfer rejected"]),
+    ("failed_transfer", ["transfer fail", "transfer failed", "transfer error", "transfer rejected", "why did my transfer"]),
     ("pending_transfer", ["transfer pending", "transfer is pending", "pending transfer"]),
     ("cancel_transfer", ["cancel my transfer", "cancel a transfer", "stop a transfer"]),
     ("card_arrival", [
