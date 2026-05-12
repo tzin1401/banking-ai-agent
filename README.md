@@ -9,7 +9,7 @@ message, the system detects the intent, retrieves relevant policy, drafts a
 reply, validates it, and decides whether to send the reply, ask for more
 information, or escalate the case to a human agent.
 
-> 🚧 **Work in progress** — see [`plan.md`](../plan.md) for the implementation roadmap.
+
 
 ---
 
@@ -152,7 +152,7 @@ Environment variables (see `app/core/settings.py` for defaults):
 | Variable | Default | Purpose |
 |----------|---------|---------|
 | `OLLAMA_URL` | `http://localhost:11434` | Ollama HTTP endpoint |
-| `OLLAMA_MODEL` | `gpt-oss:20b` | Model used for drafting |
+| `OLLAMA_MODEL` | `qwen2.5:7b` | Model used for drafting (switch to `gpt-oss:20b` on A100/L4) |
 | `INTENT_MODE` | `unsloth` | `unsloth` (real) or `mock` (rule-based) |
 | `INTENT_CONFIG_PATH` | `./configs/inference.yaml` | Lab 2 inference config |
 | `INTENT_LABELS_PATH` | `./sample_data/labels.txt` | 77 BANKING77 labels |
@@ -162,7 +162,7 @@ Environment variables (see `app/core/settings.py` for defaults):
 
 ## Video demo
 
-🎬 *Link will be added here once the demo is recorded.*
+🎬 [Video demo on Google Drive](https://drive.google.com/drive/u/0/folders/1hAjImvpUAM_c40VrPCCcoJCSGRS7wF3r)
 
 ---
 
